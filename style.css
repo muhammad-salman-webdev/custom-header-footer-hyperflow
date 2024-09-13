@@ -24,6 +24,62 @@
     }
 }
 
+@keyframes menuTopClose {
+    0% {
+        top: calc(50% - 1px);
+        transform: rotate(45deg);
+    }
+
+    50% {
+        top: 50%;
+        transform: rotate(0);
+    }
+
+    100% {
+        top: 0;
+    }
+}
+
+@keyframes menuBottomClose {
+    0% {
+        bottom: 50%;
+        transform: rotate(-45deg);
+    }
+
+    50% {
+        bottom: 50%;
+        transform: rotate(0);
+    }
+
+    100% {
+        bottom: 0;
+    }
+}
+
+@keyframes menuTopOpen {
+    50% {
+        top: 50%;
+        transform: rotate(0);
+    }
+
+    100% {
+        top: calc(50% - 2px);
+        transform: rotate(45deg);
+    }
+}
+
+@keyframes menuBottomOpen {
+    50% {
+        bottom: 50%;
+        transform: rotate(0);
+    }
+
+    100% {
+        bottom: 50%;
+        transform: rotate(-45deg);
+    }
+}
+
 .custom_header_section {
     display: flex;
     flex-direction: column;
@@ -169,6 +225,7 @@
                                             transition: all .3s ease;
                                             transform: translateY(30px);
                                             opacity: 0;
+                                            z-index: 3;
 
                                             &>ul {
                                                 list-style: none;
@@ -234,6 +291,55 @@
                                                 opacity: 1;
                                             }
                                         }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .big-menu {
+                        display: flex;
+                        align-items: center;
+                        margin-left: 40px;
+                        padding: 5px 10px;
+                        cursor: pointer;
+
+                        .toggle-btn {
+                            position: relative;
+                            width: 26px;
+                            height: 14px;
+                            cursor: pointer;
+
+                            span {
+                                position: absolute;
+                                display: block;
+                                width: 26px;
+                                height: 2px;
+                                border-top: 2px solid #000;
+
+                                &:first-child {
+                                    top: 0;
+                                    left: 0;
+                                    animation: menuTopClose .5s both;
+                                }
+
+                                &:last-child {
+                                    bottom: 0;
+                                    left: 0;
+                                    animation: menuBottomClose .5s both;
+                                }
+                            }
+                        }
+
+                        &.active {
+                            .toggle-btn {
+                                span {
+                                    &:first-child {
+                                        animation: menuTopOpen .5s both;
+                                    }
+
+                                    &:last-child {
+                                        animation: menuBottomOpen .5s both;
                                     }
                                 }
                             }
@@ -394,7 +500,7 @@
                                                     content: '';
                                                     left: 0;
                                                     right: 0;
-                                                    bottom: -3px;
+                                                    bottom: -5px;
                                                     height: 1px;
                                                     border-top: 1.5px solid #BD03F7;
                                                     position: absolute;

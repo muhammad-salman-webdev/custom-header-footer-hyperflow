@@ -29,3 +29,15 @@ serviceMenuToggleBtn.addEventListener("click", (e) => {
 });
 
 serviceMenuOverlay.addEventListener("click", toggleServiceBigMenu);
+
+// ############################################################
+
+const bigMenuToggleBtn = document.querySelector(
+  "section.custom_header_section#customGlobalHeader .custom-header-main .big-menu#bigMenuToggleBtn"
+);
+
+console.log(bigMenuToggleBtn);
+
+bigMenuToggleBtn.addEventListener("click", () => {
+  bigMenuToggleBtn.classList.toggle("active");
+});
