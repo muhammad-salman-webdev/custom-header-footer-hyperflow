@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter';
+}
+
+@keyframes loadingBarBgGradientAnimation {
+    0% {
+        background-position: 0% 15%;
+    }
+
+    50% {
+        background-position: 100% 86%;
+    }
+
+    100% {
+        background-position: 0% 15%;
+    }
+}
+
+.custom_header_section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: sticky;
+    top: 0;
+
+    .custom-loading-bar {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        background: pink;
+        height: 6px;
+        background: linear-gradient(90deg, #08D698 0.05%, #3050E5 37.85%, #B66CFF 68.42%, #FC8DBB 99.96%);
+        background-size: 200% 100%;
+        animation: loadingBarBgGradientAnimation 8s ease infinite;
+        opacity: 0;
+    }
+
+    .custom-header-main {
+        .custom-header {
+            /* background: green; */
+            border-bottom: 1px solid grey;
+
+            .custom-header-container {
+                max-width: 1340px;
+                width: 100%;
+                margin: 0 auto;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                height: 84px;
+
+                .custom-header-logo {
+                    display: flex;
+                    align-items: center;
+                    gap: 16px;
+
+                    .logo-img {
+                        display: flex;
+                        width: 32px;
+                        aspect-ratio: 1/1;
+                    }
+
+                    .logo-text {
+                        display: flex;
+
+                        span {
+                            font-family: 'Inter';
+                            font-size: 18.39px;
+                            font-weight: 600;
+                            line-height: 33px;
+                            color: #000;
+                        }
+                    }
+                }
+
+                .custom-header-content {
+                    display: flex;
+
+                    .custom-header-menu {
+                        &>ul {
+                            display: flex;
+                            list-style: none;
+                            align-items: center;
+                            gap: 24px;
+
+                            &>li {
+                                position: relative;
+                                padding: 0 4px;
+
+                                &::before {
+                                    content: '';
+                                    display: block;
+                                    width: 100%;
+                                    background: #161616;
+                                    height: 1px;
+                                    bottom: -5px;
+                                    left: 0;
+                                    right: 0;
+                                    position: absolute;
+                                    transform: scale(0, 1);
+                                    transition: all .3s ease;
+                                    transform-origin: left;
+                                    border-radius: 4px;
+                                }
+
+                                &:hover::before {
+                                    transform: scale(1, 1);
+                                }
+
+                                a {
+                                    text-decoration: none;
+                                }
+
+                                &>a>span,
+                                &>div>a>span {
+                                    display: flex;
+                                    font-family: 'Inter';
+                                    font-size: 18px;
+                                    font-weight: 500;
+                                    line-height: 20.88px;
+                                    letter-spacing: -0.20999999344348907px;
+                                    text-align: left;
+                                    color: #161616;
+                                }
+
+                                &.sub-menu-item {
+                                    &>div>a {
+                                        display: flex;
+                                        align-items: center;
+                                        gap: 6px;
+
+                                        i {
+                                            font-size: 12px;
+                                            transition: all .3s ease;
+                                            color: #161616;
+                                        }
+                                    }
+
+                                    &.popup-items {
+                                        display: flex;
+                                        justify-content: center;
+                                        height: 42px;
+                                        align-items: center;
+
+                                        &>.sub-menu {
+                                            background: grey;
+                                            display: block;
+                                            position: absolute;
+                                            width: 100px;
+                                            top: 40px;
+                                            border-radius: 4px;
+                                            border: 1px solid #61758080;
+                                            background: #fff;
+                                            transition: all .3s ease;
+                                            transform: translateY(30px);
+                                            opacity: 0;
+
+                                            &>ul {
+                                                list-style: none;
+
+                                                &>li {
+                                                    width: 100%;
+
+                                                    &:not(:first-child) {
+                                                        border-top: 1px solid #61758080;
+                                                    }
+
+                                                    a {
+                                                        font-family: 'Roboto';
+                                                        font-size: 16px;
+                                                        font-weight: 500;
+                                                        line-height: 24px;
+                                                        text-align: left;
+                                                        color: #161616;
+                                                        text-align: center;
+                                                        width: 100%;
+                                                        display: block;
+                                                        padding: 10px 0;
+
+                                                        span {
+                                                            max-width: max-content;
+                                                            position: relative;
+
+                                                            &::before {
+                                                                content: '';
+                                                                left: 0;
+                                                                right: 0;
+                                                                bottom: -4px;
+                                                                position: absolute;
+                                                                height: 1px;
+                                                                border-top: 1px solid #BD03F7;
+                                                                transform-origin: left;
+                                                                transform: scale(0, 1);
+                                                                transition: all .3s ease;
+                                                            }
+                                                        }
+
+                                                        &:hover {
+                                                            span {
+                                                                &::before {
+                                                                    transform: scale(1, 1);
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+
+                                        &:hover {
+                                            &>div>a i {
+                                                transform: rotate(180deg);
+                                            }
+
+                                            &>.sub-menu {
+                                                /* background: grey; */
+                                                display: block;
+                                                transform: translateY(0px);
+                                                opacity: 1;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
