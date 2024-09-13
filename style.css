@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 
 * {
     margin: 0;
@@ -33,7 +35,6 @@
         position: absolute;
         top: 0;
         width: 100%;
-        background: pink;
         height: 6px;
         background: linear-gradient(90deg, #08D698 0.05%, #3050E5 37.85%, #B66CFF 68.42%, #FC8DBB 99.96%);
         background-size: 200% 100%;
@@ -43,7 +44,7 @@
 
     .custom-header-main {
         .custom-header {
-            /* background: green; */
+            background: #fff;
             border-bottom: 1px solid grey;
 
             .custom-header-container {
@@ -142,6 +143,14 @@
                                         }
                                     }
 
+                                    &.service-menu-toggle-btn {
+                                        &.active {
+                                            &>div>a i {
+                                                transform: rotate(180deg);
+                                            }
+                                        }
+                                    }
+
                                     &.popup-items {
                                         display: flex;
                                         justify-content: center;
@@ -235,15 +244,193 @@
         }
 
         .custom-services-sub-menu {
-            background: red;
             height: 285px;
+            background: #fff;
+            position: fixed;
+            width: 100%;
+            z-index: 2;
+            transform: translateY(-400px);
+            display: none;
+            transition: all .5s ease;
+
+            .services-sub-menu-overlay {
+                display: block;
+                position: fixed;
+                background: rgba(0, 0, 0, 0.053);
+                height: calc(1000vh);
+                backdrop-filter: blur(2px);
+                z-index: -1;
+                top: 285px;
+                left: 0;
+                right: 0;
+                opacity: 0;
+                transition: all .3s ease;
+            }
+
+            &.show {
+                display: block;
+            }
+
+            &.anim {
+                transform: translateY(0);
+                opacity: 1;
+
+                .services-sub-menu-overlay {
+                    opacity: 1;
+                }
+            }
+
+            &::before {
+                content: '';
+                right: 0;
+                left: 0;
+                height: 10px;
+                bottom: 0;
+                position: absolute;
+                height: 6px;
+                background: linear-gradient(90deg, #08D698 0.05%, #3050E5 37.85%, #B66CFF 68.42%, #FC8DBB 99.96%);
+                background-size: 200% 100%;
+                animation: loadingBarBgGradientAnimation 8s ease infinite;
+            }
 
             .custom-sub-menu-container {
                 height: 100%;
                 max-width: 1340px;
                 width: 100%;
                 margin: 0 auto;
-                background: pink;
+                display: grid;
+                grid-template-columns: 2fr 3fr;
+
+                .service-description-area {
+                    border-right: 1px solid #656E7A80;
+                    display: flex;
+                    align-items: center;
+
+                    .services-desc-content {
+                        width: 320px;
+                        margin: 0 30px 0 auto;
+
+                        .title {
+                            display: flex;
+                            align-items: end;
+                            gap: 10px;
+                            border-bottom: 1px solid #CBD2D9;
+                            padding-bottom: 10px;
+                            margin-bottom: 16px;
+
+                            img {
+                                width: 20px;
+                                margin-bottom: 3px;
+                            }
+
+                            h3 {
+                                font-family: 'Poppins';
+                                font-size: 15px;
+                                font-weight: 600;
+                                /* line-height: 31.2px; */
+                                letter-spacing: -0.36000001430511475px;
+                                color: #161616;
+                            }
+                        }
+
+                        .desc {
+                            p {
+                                font-family: 'DM Sans';
+                                font-size: 12px;
+                                font-weight: 400;
+                                line-height: 18px;
+                                letter-spacing: -0.36000001430511475px;
+                                text-align: left;
+                            }
+                        }
+                    }
+                }
+
+                .services-cards-main {
+                    .services-cards-container {
+                        display: grid;
+                        grid-template-columns: 1fr 1.5fr 1.5fr;
+                        justify-content: center;
+                        padding: 50px 0px 0 50px;
+
+                        .services-card {
+                            .title {
+                                h3 {
+                                    font-family: 'Inter';
+                                    font-size: 14.48px;
+                                    font-weight: 600;
+                                    line-height: 27px;
+                                    color: #161616;
+                                }
+                            }
+
+                            .services {
+                                ul {
+                                    list-style: none;
+                                    margin-top: 10px;
+                                    display: flex;
+                                    flex-direction: column;
+                                    gap: 12px;
+
+                                    li {
+                                        a {
+                                            text-decoration: none;
+                                            font-family: 'Inter';
+                                            display: flex;
+                                            align-items: end;
+                                            max-width: max-content;
+
+                                            p {
+                                                font-size: 14px;
+                                                font-weight: 500;
+                                                line-height: 20.88px;
+                                                letter-spacing: -0.20999999344348907px;
+                                                text-align: left;
+                                                color: #161616;
+                                                min-width: max-content;
+                                                position: relative;
+
+                                                &::before {
+                                                    content: '';
+                                                    left: 0;
+                                                    right: 0;
+                                                    bottom: -3px;
+                                                    height: 1px;
+                                                    border-top: 1.5px solid #BD03F7;
+                                                    position: absolute;
+                                                    transform: scale(0, 1);
+                                                    transition: all .3s ease;
+                                                    transform-origin: left;
+                                                }
+                                            }
+
+                                            span {
+                                                background: #673DE6;
+                                                padding: 3px 7px;
+                                                border-radius: 5px;
+                                                font-family: 'Inter';
+                                                color: #fff;
+                                                font-size: 11px;
+                                                font-weight: 500;
+                                                line-height: 18px;
+                                                text-align: left;
+                                                margin: 0 0 4px 7px;
+                                            }
+
+                                            &:hover {
+                                                p {
+                                                    &::before {
+                                                        transform: scale(1, 1);
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
     }
