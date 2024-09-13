@@ -38,7 +38,7 @@
         background: linear-gradient(90deg, #08D698 0.05%, #3050E5 37.85%, #B66CFF 68.42%, #FC8DBB 99.96%);
         background-size: 200% 100%;
         animation: loadingBarBgGradientAnimation 8s ease infinite;
-        opacity: 0;
+        /* opacity: 0; */
     }
 
     .custom-header-main {
@@ -231,6 +231,19 @@
                         }
                     }
                 }
+            }
+        }
+
+        .custom-services-sub-menu {
+            background: red;
+            height: 285px;
+
+            .custom-sub-menu-container {
+                height: 100%;
+                max-width: 1340px;
+                width: 100%;
+                margin: 0 auto;
+                background: pink;
             }
         }
     }
