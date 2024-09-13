@@ -35,9 +35,26 @@ serviceMenuOverlay.addEventListener("click", toggleServiceBigMenu);
 const bigMenuToggleBtn = document.querySelector(
   "section.custom_header_section#customGlobalHeader .custom-header-main .big-menu#bigMenuToggleBtn"
 );
+const headerBigMenu = document.querySelector(
+  "section.custom_header_section#customGlobalHeader .custom-header-main .custom-bigmenu-main#customHeaderBigMenu"
+);
 
-console.log(bigMenuToggleBtn);
+console.log(headerBigMenu);
 
 bigMenuToggleBtn.addEventListener("click", () => {
-  bigMenuToggleBtn.classList.toggle("active");
+  if (bigMenuToggleBtn.classList.contains("active")) {
+    headerBigMenu.classList.remove("anim");
+    setTimeout(() => {
+      headerBigMenu.classList.remove("show");
+    }, 300);
+    setTimeout(() => {
+      bigMenuToggleBtn.classList.toggle("active");
+    }, 100);
+  } else {
+    headerBigMenu.classList.add("show");
+    bigMenuToggleBtn.classList.toggle("active");
+    setTimeout(() => {
+      headerBigMenu.classList.add("anim");
+    }, 10);
+  }
 });

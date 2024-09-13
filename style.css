@@ -99,6 +99,8 @@
     }
 
     .custom-header-main {
+
+        /* Header */
         .custom-header {
             background: #fff;
             border-bottom: 1px solid grey;
@@ -301,8 +303,12 @@
                         display: flex;
                         align-items: center;
                         margin-left: 40px;
-                        padding: 5px 10px;
+                        padding: 8px 10px;
                         cursor: pointer;
+                        aspect-ratio: 1/1;
+                        border-radius: 6px;
+                        border: 2px solid transparent;
+                        transition: all .3s ease;
 
                         .toggle-btn {
                             position: relative;
@@ -332,8 +338,14 @@
                         }
 
                         &.active {
+                            position: relative;
+                            z-index: 99;
+                            border-color: white;
+
                             .toggle-btn {
                                 span {
+                                    border-color: white;
+
                                     &:first-child {
                                         animation: menuTopOpen .5s both;
                                     }
@@ -349,6 +361,7 @@
             }
         }
 
+        /* Services Sub Menu */
         .custom-services-sub-menu {
             height: 285px;
             background: #fff;
@@ -358,6 +371,19 @@
             transform: translateY(-400px);
             display: none;
             transition: all .5s ease;
+
+            &.show {
+                display: block;
+            }
+
+            &.anim {
+                transform: translateY(0);
+                opacity: 1;
+
+                .services-sub-menu-overlay {
+                    opacity: 1;
+                }
+            }
 
             .services-sub-menu-overlay {
                 display: block;
@@ -371,19 +397,6 @@
                 right: 0;
                 opacity: 0;
                 transition: all .3s ease;
-            }
-
-            &.show {
-                display: block;
-            }
-
-            &.anim {
-                transform: translateY(0);
-                opacity: 1;
-
-                .services-sub-menu-overlay {
-                    opacity: 1;
-                }
             }
 
             &::before {
@@ -537,6 +550,36 @@
                         }
                     }
                 }
+            }
+        }
+
+        /* Big Menu */
+        .custom-bigmenu-main {
+            position: fixed;
+            width: 100%;
+            min-height: 100vh;
+            overflow: auto;
+            background: #1E2124;
+            inset: 0;
+            transform: translateY(-110vh) scale(.7);
+            transition: all .5s ease;
+            display: none;
+            padding: 50px;
+            z-index: 9;
+
+            &.show {
+                display: block;
+            }
+
+            &.anim {
+                transform: translateY(0) scale(1);
+            }
+
+            .custom-bigmenu-container {
+                width: 100%;
+                max-width: 1340px;
+                margin: 0 auto;
+                height: 100%;
             }
         }
     }
