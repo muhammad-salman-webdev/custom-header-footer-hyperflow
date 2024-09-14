@@ -57,6 +57,8 @@ bigMenuToggleBtn.addEventListener("click", () => {
   }
 });
 
+// ###############################
+
 const swiper = new Swiper("#bigMenuSliderContainer .swiper", {
   loop: true,
   // autoplay: {
@@ -71,4 +73,23 @@ const swiper = new Swiper("#bigMenuSliderContainer .swiper", {
     nextEl:
       ".bigmenu-slider-container#bigMenuSliderContainer .slider-btns .fa-arrow-right",
   },
+});
+
+// ###############################
+
+const bigMenuContentToggleSubMenus = document.querySelectorAll(
+  ".custom_header_section#customGlobalHeader .custom-bigmenu-main#customHeaderBigMenu .cate-screen-links .cate-links-blocks  > .cate-links-block:has(.triger>h4+i)"
+);
+
+bigMenuContentToggleSubMenus.forEach((toggleMenu, index) => {
+  const triger = toggleMenu.querySelector(".triger:has(h4+i)");
+  triger.addEventListener("click", () => {
+    bigMenuContentToggleSubMenus.forEach((_m, _i) => {
+      if (index === _i) {
+        toggleMenu.classList.toggle("active");
+      } else {
+        _m.classList.remove("active");
+      }
+    });
+  });
 });
