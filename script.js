@@ -93,3 +93,23 @@ bigMenuContentToggleSubMenus.forEach((toggleMenu, index) => {
     });
   });
 });
+
+// $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+window.addEventListener("load", function () {
+  const loadingBar = document.querySelector(
+    ".custom-loading-bar#customHeaderLoadingBar"
+  );
+  console.log(loadingBar);
+  let width = 0;
+  const interval = setInterval(function () {
+    if (width >= 100) {
+      clearInterval(interval);
+      loadingBar.style.opacity = "0";
+    } else {
+      width++;
+      loadingBar.style.width = width + "%";
+      loadingBar.style.opacity = "1";
+    }
+  }, 3);
+});
