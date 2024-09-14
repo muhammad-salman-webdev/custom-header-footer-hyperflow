@@ -39,8 +39,6 @@ const headerBigMenu = document.querySelector(
   "section.custom_header_section#customGlobalHeader .custom-header-main .custom-bigmenu-main#customHeaderBigMenu"
 );
 
-console.log(headerBigMenu);
-
 bigMenuToggleBtn.addEventListener("click", () => {
   if (bigMenuToggleBtn.classList.contains("active")) {
     headerBigMenu.classList.remove("anim");
@@ -57,4 +55,20 @@ bigMenuToggleBtn.addEventListener("click", () => {
       headerBigMenu.classList.add("anim");
     }, 10);
   }
+});
+
+const swiper = new Swiper("#bigMenuSliderContainer .swiper", {
+  loop: true,
+  autoplay: {
+    delay: 2000,
+    disableOnInteraction: false,
+  },
+  speed: 600,
+  spaceBetween: 20,
+  navigation: {
+    prevEl:
+      ".bigmenu-slider-container#bigMenuSliderContainer .slider-btns .fa-arrow-left",
+    nextEl:
+      ".bigmenu-slider-container#bigMenuSliderContainer .slider-btns .fa-arrow-right",
+  },
 });

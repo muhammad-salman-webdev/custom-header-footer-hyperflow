@@ -123,6 +123,12 @@
                         display: flex;
                         width: 32px;
                         aspect-ratio: 1/1;
+
+                        svg {
+                            path {
+                                fill: #000;
+                            }
+                        }
                     }
 
                     .logo-text {
@@ -561,18 +567,18 @@
             overflow: auto;
             background: #1E2124;
             inset: 0;
-            transform: translateY(-110vh) scale(.7);
+            transform: translateY(-110vh);
             transition: all .5s ease;
             display: none;
-            padding: 50px;
             z-index: 9;
+            padding: 120px 0 50px;
 
             &.show {
                 display: block;
             }
 
             &.anim {
-                transform: translateY(0) scale(1);
+                transform: translateY(0);
             }
 
             .custom-bigmenu-container {
@@ -580,6 +586,113 @@
                 max-width: 1340px;
                 margin: 0 auto;
                 height: 100%;
+                padding: 20px 0 10px;
+
+                .custom-bigmenu-content-main {
+                    .custom-bigmenu-header {
+                        .title {
+                            max-width: 800px;
+
+                            h1 {
+                                background: linear-gradient(90deg, #08D698 0.05%, #3050E5 37.85%, #B66CFF 68.42%, #FC8DBB 99.96%);
+                                background-size: 200% 100%;
+                                animation: loadingBarBgGradientAnimation 8s ease infinite;
+                                font-family: 'Inter';
+                                font-size: 50px;
+                                font-weight: 600;
+                                line-height: 65px;
+                                letter-spacing: -0.5px;
+                                -webkit-background-clip: text;
+                                -webkit-text-fill-color: transparent;
+                            }
+                        }
+                    }
+
+                    .bigmenu-content-container {
+                        margin: 50px 0 0;
+
+                        .bigmenu-slider {
+                            width: 356px;
+
+                            .bigmenu-slider-container {
+                                width: 100%;
+
+                                .swiper {
+                                    overflow: hidden;
+                                    border-radius: 8px;
+                                    width: 100%;
+                                    display: flex;
+
+                                    .swiper-slide {
+                                        display: flex;
+
+                                        img {
+                                            width: 100%;
+                                            border-radius: 8px;
+                                            object-fit: cover;
+                                            height: 100%;
+                                        }
+                                    }
+                                }
+
+                                .slider-btns {
+                                    display: flex;
+                                    gap: 5px;
+                                    justify-content: right;
+                                    margin-top: 20px;
+
+                                    button {
+                                        background: #F2F3F5;
+                                        width: 34px;
+                                        aspect-ratio: 1/1;
+                                        display: grid;
+                                        place-items: center;
+                                        color: #000000;
+                                        font-size: 20px;
+                                        cursor: pointer;
+                                        transition: all .3s ease;
+                                        border: none;
+                                        outline: none;
+                                        border-radius: 8px;
+
+                                        &:hover {
+                                            background: #CDD5E2;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &:has(.custom-bigmenu-main.show) {
+            .custom-header {
+                .custom-header-container {
+                    .custom-header-logo {
+                        position: relative;
+                        z-index: 99;
+
+                        .logo-img {
+                            display: flex;
+                            width: 32px;
+                            aspect-ratio: 1/1;
+
+                            svg {
+                                path {
+                                    fill: white;
+                                }
+                            }
+                        }
+
+                        .logo-text {
+                            span {
+                                color: #ffffff;
+                            }
+                        }
+                    }
+                }
             }
         }
     }
