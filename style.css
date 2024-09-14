@@ -585,7 +585,7 @@
                 width: 100%;
                 max-width: 1340px;
                 margin: 0 auto;
-                height: 100%;
+                min-height: 100%;
                 padding: 20px 0 10px;
 
                 .custom-bigmenu-content-main {
@@ -610,6 +610,8 @@
 
                     .bigmenu-content-container {
                         margin: 50px 0 0;
+                        display: grid;
+                        grid-template-columns: auto 1fr;
 
                         .bigmenu-slider {
                             width: 356px;
@@ -658,6 +660,206 @@
                                         &:hover {
                                             background: #CDD5E2;
                                         }
+                                    }
+                                }
+                            }
+                        }
+
+                        .bigmenu-links-cate-container {
+                            .bigmenu-links-menus-main-container {
+                                max-width: 750px;
+                                margin: 0 auto;
+
+                                .cate-links-container {
+                                    .cate-screen-links {
+                                        &>h5 {
+                                            display: none;
+                                        }
+
+                                        &.cate-mobile-links {
+                                            display: none;
+                                        }
+
+                                        .cate-links-blocks {
+                                            display: grid;
+                                            grid-template-columns: 1fr 1.5fr 1.5fr;
+                                            gap: 35px;
+
+                                            .cate-links-block {
+                                                .triger {
+                                                    h4 {
+                                                        position: relative;
+                                                        font-family: 'Inter';
+                                                        color: #fff;
+                                                        cursor: default;
+                                                        font-size: 16px;
+                                                        font-weight: 600;
+                                                        line-height: 27px;
+                                                        letter-spacing: -0.006em;
+                                                        text-align: left;
+                                                        padding-bottom: 10px;
+                                                        max-width: max-content;
+                                                        padding-right: 50px;
+
+                                                        &::before {
+                                                            content: '';
+                                                            width: 100%;
+                                                            bottom: 0;
+                                                            height: 1px;
+                                                            background: #fff;
+                                                            position: absolute;
+                                                        }
+                                                    }
+
+                                                    i {
+                                                        display: none;
+                                                    }
+                                                }
+
+                                                .content {
+                                                    ul {
+                                                        margin-top: 25px;
+                                                        display: flex;
+                                                        list-style: none;
+                                                        flex-direction: column;
+                                                        gap: 15px;
+
+                                                        li {
+                                                            max-width: max-content;
+
+                                                            a {
+                                                                text-decoration: none;
+                                                                max-width: max-content;
+
+                                                                h4 {
+                                                                    font-family: 'Inter';
+                                                                    font-size: 15px;
+                                                                    font-weight: 400;
+                                                                    line-height: 20.88px;
+                                                                    letter-spacing: -0.20999999344348907px;
+                                                                    color: #CBD2D9;
+                                                                    position: relative;
+                                                                    transition: all .3s ease;
+                                                                    max-width: max-content;
+
+                                                                    &::before {
+                                                                        content: '';
+                                                                        width: 100%;
+                                                                        position: absolute;
+                                                                        bottom: -8px;
+                                                                        transform: scale(0, 1);
+                                                                        transition: all .3s ease;
+                                                                        transform-origin: left;
+                                                                        height: 1px;
+                                                                        border-bottom: 2px solid #BD03F7;
+                                                                    }
+
+                                                                    &:hover {
+                                                                        color: #fff;
+
+                                                                        &::before {
+                                                                            transform: scale(1, 1);
+                                                                        }
+                                                                    }
+                                                                }
+
+                                                                span {
+                                                                    display: none;
+                                                                }
+
+                                                                &.pricing-plan-label h4::after {
+                                                                    content: 'Pricing Plan';
+                                                                    background: #4B22CC;
+                                                                    color: #fff;
+                                                                    border-radius: 5px;
+                                                                    padding: 3px 8px;
+                                                                    font-family: 'Inter';
+                                                                    font-size: 11px;
+                                                                    font-weight: 500;
+                                                                    line-height: 18px;
+                                                                    position: absolute;
+                                                                    left: 106%;
+                                                                    min-width: max-content;
+                                                                    top: -14px;
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+
+                                .main-menu-links-container {
+                                    margin: 50px 0 00 0;
+
+                                    ul {
+                                        display: flex;
+                                        list-style: none;
+                                        gap: 24px;
+
+                                        li {
+                                            a {
+                                                text-decoration: none;
+                                                padding: 2px 0;
+                                                position: relative;
+
+                                                span {
+                                                    font-family: 'Inter';
+                                                    font-size: 14px;
+                                                    font-weight: 400;
+                                                    line-height: 54px;
+                                                    text-align: left;
+                                                    color: white;
+                                                }
+
+                                                &::before {
+                                                    content: '';
+                                                    border-top: 1px solid #BD03F7;
+                                                    height: 1px;
+                                                    transform: scale(0, 1);
+                                                    transition: all .3s ease;
+                                                    width: 100%;
+                                                    position: absolute;
+                                                    bottom: -2px;
+                                                    left: 0;
+                                                    transform-origin: left;
+                                                }
+
+                                                &:hover::before {
+                                                    transform: scale(1);
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .bigmenu-social-links {
+                        margin: 50px 0 0;
+
+                        ul {
+                            display: flex;
+                            justify-content: right;
+                            gap: 25px;
+
+                            li {
+                                list-style: none;
+
+                                a {
+                                    text-decoration: none;
+                                    color: white;
+                                    transition: all .3s ease;
+
+                                    i {
+                                        font-size: 30px;
+                                    }
+
+                                    &:hover {
+                                        color: #9AA0AB;
                                     }
                                 }
                             }

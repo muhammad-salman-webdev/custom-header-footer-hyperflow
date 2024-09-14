@@ -59,10 +59,10 @@ bigMenuToggleBtn.addEventListener("click", () => {
 
 const swiper = new Swiper("#bigMenuSliderContainer .swiper", {
   loop: true,
-  autoplay: {
-    delay: 2000,
-    disableOnInteraction: false,
-  },
+  // autoplay: {
+  //   delay: 2000,
+  //   disableOnInteraction: false,
+  // },
   speed: 600,
   spaceBetween: 20,
   navigation: {
