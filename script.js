@@ -8,19 +8,27 @@ const serviceMenuOverlay = document.querySelector(
   "section.custom_header_section#customGlobalHeader .custom-header-main .custom-services-sub-menu .services-sub-menu-overlay"
 );
 
-function toggleServiceBigMenu() {
-  serviceMenuToggleBtn.classList.toggle("active");
-
-  if (serviceMenuToggleBtn.classList.contains("active")) {
-    serviceMenu.classList.add("show");
-    setTimeout(() => {
-      serviceMenu.classList.add("anim");
-    }, 10);
-  } else {
+function toggleServiceBigMenu(act = "") {
+  if (act === "close") {
     serviceMenu.classList.remove("anim");
     setTimeout(() => {
       serviceMenu.classList.remove("show");
     }, 300);
+    serviceMenuToggleBtn.classList.remove("active");
+  } else {
+    serviceMenuToggleBtn.classList.toggle("active");
+
+    if (serviceMenuToggleBtn.classList.contains("active")) {
+      serviceMenu.classList.add("show");
+      setTimeout(() => {
+        serviceMenu.classList.add("anim");
+      }, 10);
+    } else {
+      serviceMenu.classList.remove("anim");
+      setTimeout(() => {
+        serviceMenu.classList.remove("show");
+      }, 300);
+    }
   }
 }
 serviceMenuToggleBtn.addEventListener("click", (e) => {
@@ -54,6 +62,7 @@ bigMenuToggleBtn.addEventListener("click", () => {
     setTimeout(() => {
       headerBigMenu.classList.add("anim");
     }, 10);
+    toggleServiceBigMenu("close");
   }
 });
 

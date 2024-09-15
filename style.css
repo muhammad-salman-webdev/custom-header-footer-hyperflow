@@ -603,6 +603,17 @@
 
             &.anim {
                 transform: translateY(0);
+
+                .cate-links-block {
+                    .triger {
+                        h4 {
+                            &::before {
+                                transform: scaleX(1) !important;
+                                opacity: 1 !important;
+                            }
+                        }
+                    }
+                }
             }
 
             .custom-bigmenu-container {
@@ -734,6 +745,11 @@
                                                             height: 1px;
                                                             background: #fff;
                                                             position: absolute;
+                                                            transition: all 1s ease;
+                                                            transition-delay: .4s;
+                                                            transform: scaleX(0);
+                                                            opacity: 0;
+                                                            transform-origin: left;
                                                         }
                                                     }
 
