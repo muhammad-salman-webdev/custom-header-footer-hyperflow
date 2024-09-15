@@ -100,7 +100,6 @@ window.addEventListener("load", function () {
   const loadingBar = document.querySelector(
     ".custom-loading-bar#customHeaderLoadingBar"
   );
-  console.log(loadingBar);
   let width = 0;
   const interval = setInterval(function () {
     if (width >= 100) {
