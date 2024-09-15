@@ -69,11 +69,8 @@ bigMenuToggleBtn.addEventListener("click", () => {
 // ###############################
 let curSlide = 1;
 const swiper = new Swiper("#bigMenuSliderContainer .swiper", {
-  loop: false,
-  // autoplay: {
-  //   delay: 2000,
-  //   disableOnInteraction: false,
-  // },
+  loop: true,
+
   speed: 600,
   spaceBetween: 20,
   navigation: {
@@ -97,10 +94,6 @@ bigMenuSwiperRightBtn.addEventListener("click", () => {
     bigMenuSwiperLeftBtn.style.display = "block";
   }
   if (curSlide > 3) curSlide = 3;
-
-  if (curSlide == 3) {
-    bigMenuSwiperRightBtn.style.opacity = "0";
-  }
 });
 
 bigMenuSwiperLeftBtn.addEventListener("click", () => {
@@ -108,8 +101,6 @@ bigMenuSwiperLeftBtn.addEventListener("click", () => {
   if (curSlide < 1) curSlide = 1;
   if (curSlide == 1) {
     bigMenuSwiperLeftBtn.style.display = "none";
-  } else {
-    bigMenuSwiperRightBtn.style.opacity = "1";
   }
 });
 
