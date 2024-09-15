@@ -1025,11 +1025,16 @@
                         }
 
                         .big-menu {
+                            margin: 0;
+
                             .toggle-btn {
                                 span {}
                             }
 
                             &.active {
+                                transform: translate(0px, 0px);
+                                border: none;
+
                                 .toggle-btn {
                                     span {
                                         border-color: #000;
@@ -1079,6 +1084,11 @@
 
                                     .slider-btns {
                                         margin: 0 0 20px 0;
+
+                                        button {
+                                            width: 42px;
+                                            font-size: 20px;
+                                        }
                                     }
                                 }
                             }
@@ -1266,6 +1276,73 @@
                         &::before {
                             background: #ffffff;
                             height: 80px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:850px) {
+    .custom_header_section {
+        .custom-loading-bar {
+            height: 4px;
+        }
+
+        .custom-header-main {
+
+            /* Big Menu */
+            .custom-bigmenu-main {
+                .custom-bigmenu-container {
+                    .custom-bigmenu-content-main {
+                        .bigmenu-content-container {
+                            .bigmenu-links-cate-container {
+                                .bigmenu-links-menus-main-container {
+                                    .cate-links-container {
+                                        .cate-screen-links {
+                                            .cate-links-blocks {
+                                                .cate-links-block {
+                                                    .content {
+                                                        ul {
+                                                            li {
+                                                                &:not(:last-child) {
+                                                                    /* Salman */
+                                                                    border-bottom: 1px solid #cecece;
+                                                                    width: 100%;
+                                                                    max-width: 100%;
+                                                                    padding: 0 0 10px 0;
+                                                                }
+
+                                                                a {
+                                                                    h4 {
+                                                                        font-size: 18px;
+                                                                        font-weight: 400;
+                                                                    }
+
+                                                                    span {
+                                                                        font-size: 13px;
+                                                                        /* Salman */
+                                                                        /* Salman */
+                                                                        font-weight: 400;
+                                                                    }
+
+                                                                    &.pricing-plan-label h4::after {
+                                                                        /* Salman */
+                                                                        transform: scale(0.8);
+                                                                        left: 100%;
+                                                                        /* Salman */
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
                         }
                     }
                 }
