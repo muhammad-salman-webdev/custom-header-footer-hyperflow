@@ -669,11 +669,16 @@
 
                         .animated-widget {
                             margin-left: -50px;
+                            transform: translate(-100px, -20px) scale(.65);
 
                             .animated-widget-container {
                                 .animated_face_main#SmillingFaceAnimation {
                                     width: 160px;
                                     height: 160px;
+
+                                    .random-stars-container {
+                                        transform: translateY(-200px);
+                                    }
                                 }
                             }
                         }
