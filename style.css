@@ -668,16 +668,19 @@
                         }
 
                         .animated-widget {
-                            margin-left: -50px;
-                            transform: translate(-100px, -20px) scale(.65);
+                            width: 200px;
+                            position: relative;
 
                             .animated-widget-container {
                                 .animated_face_main#SmillingFaceAnimation {
-                                    width: 160px;
-                                    height: 160px;
+                                    position: absolute;
+                                    left: -540px;
+                                    width: 1060px;
+                                    height: 120px;
+                                    transform: scale(.65);
 
                                     .random-stars-container {
-                                        transform: translateY(-200px);
+                                        transform: translate(-460px, -134px);
                                     }
                                 }
                             }
