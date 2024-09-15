@@ -583,8 +583,8 @@
         .custom-bigmenu-main {
             position: fixed;
             width: 100%;
-            min-height: 100vh;
-            max-height: 100vh;
+            min-height: 100dvh;
+            max-height: 100dvh;
             background: #1E2124;
             inset: 0;
             transform: translateY(-110vh);
@@ -635,7 +635,7 @@
                 margin: 0 auto;
                 overflow: auto;
                 /* padding: 80px 0 70px; */
-                max-height: calc(100vh - 120px);
+                max-height: calc(100dvh - 120px);
 
                 &::-webkit-scrollbar {
                     width: 0;
