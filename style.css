@@ -591,7 +591,7 @@
             transition: all .5s ease;
             display: none;
             z-index: 9;
-            padding: 90px 0 0px;
+            padding: 110px 0 0px;
 
             &::before {
                 content: '';
@@ -630,12 +630,13 @@
             }
 
             .custom-bigmenu-container {
-                max-width: var(--container-width);
+                max-width: 1200px;
                 width: var(--full-width);
                 margin: 0 auto;
                 overflow: auto;
                 /* padding: 80px 0 70px; */
-                max-height: calc(100dvh - 120px);
+                min-height: calc(100dvh - 140px);
+                max-height: calc(100dvh - 140px);
 
                 &::-webkit-scrollbar {
                     width: 0;
@@ -643,6 +644,7 @@
 
                 .custom-bigmenu-content-main {
                     position: relative;
+                    min-height: calc(100dvh - 140px);
 
                     .custom-bigmenu-header {
                         .title {
@@ -664,7 +666,7 @@
                     }
 
                     .bigmenu-content-container {
-                        margin: 50px 0 0;
+                        margin: 70px 0 0;
                         display: grid;
                         grid-template-columns: auto 1fr;
 
@@ -723,7 +725,7 @@
                         .bigmenu-links-cate-container {
                             .bigmenu-links-menus-main-container {
                                 max-width: 750px;
-                                margin-left: 54px;
+                                margin: 0 0 0 auto;
 
                                 .cate-links-container {
                                     .cate-screen-links {
@@ -899,6 +901,10 @@
                     }
 
                     .bigmenu-social-links {
+                        position: absolute;
+                        bottom: 0;
+                        right: 0;
+
                         ul {
                             display: flex;
                             justify-content: right;

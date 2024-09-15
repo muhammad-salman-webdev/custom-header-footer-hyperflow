@@ -67,22 +67,57 @@ bigMenuToggleBtn.addEventListener("click", () => {
 });
 
 // ###############################
-
+let curSlide = 1;
 const swiper = new Swiper("#bigMenuSliderContainer .swiper", {
-  loop: true,
+  loop: false,
   // autoplay: {
   //   delay: 2000,
   //   disableOnInteraction: false,
   // },
-  speed: 400,
+  speed: 600,
   spaceBetween: 20,
   navigation: {
     prevEl:
-      ".bigmenu-slider-container#bigMenuSliderContainer .slider-btns .fa-arrow-left",
+      ".bigmenu-slider-container#bigMenuSliderContainer .slider-btns button:has(.fa-arrow-left)",
     nextEl:
-      ".bigmenu-slider-container#bigMenuSliderContainer .slider-btns .fa-arrow-right",
+      ".bigmenu-slider-container#bigMenuSliderContainer .slider-btns button:has(.fa-arrow-right)",
   },
 });
+const bigMenuSwiperLeftBtn = document.querySelector(
+  ".bigmenu-slider-container#bigMenuSliderContainer .slider-btns button:has(.fa-arrow-left)"
+);
+const bigMenuSwiperRightBtn = document.querySelector(
+  ".bigmenu-slider-container#bigMenuSliderContainer .slider-btns button:has(.fa-arrow-right)"
+);
+bigMenuSwiperLeftBtn.style.display = "none";
+
+bigMenuSwiperRightBtn.addEventListener("click", () => {
+  curSlide++;
+  if (curSlide > 1) {
+    bigMenuSwiperLeftBtn.style.display = "block";
+  }
+  if (curSlide > 3) curSlide = 3;
+
+  if (curSlide == 3) {
+    bigMenuSwiperRightBtn.style.opacity = "0";
+  }
+});
+
+bigMenuSwiperLeftBtn.addEventListener("click", () => {
+  curSlide--;
+  if (curSlide < 1) curSlide = 1;
+  if (curSlide == 1) {
+    bigMenuSwiperLeftBtn.style.display = "none";
+  } else {
+    bigMenuSwiperRightBtn.style.opacity = "1";
+  }
+});
+
+setInterval(() => {
+  if (bigMenuToggleBtn.classList.contains("active")) {
+    bigMenuSwiperRightBtn.click();
+  }
+}, 4000);
 
 // ###############################
 
@@ -121,3 +156,5 @@ window.addEventListener("load", function () {
     }
   }, 3);
 });
+
+// $$$$$$$$$$$$$$$$$$$$$$$
