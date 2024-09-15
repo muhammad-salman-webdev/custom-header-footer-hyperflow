@@ -647,6 +647,9 @@
                     min-height: calc(100dvh - 140px);
 
                     .custom-bigmenu-header {
+                        display: grid;
+                        grid-template-columns: auto auto;
+
                         .title {
                             max-width: 800px;
 
@@ -661,6 +664,17 @@
                                 letter-spacing: -0.5px;
                                 -webkit-background-clip: text;
                                 -webkit-text-fill-color: transparent;
+                            }
+                        }
+
+                        .animated-widget {
+                            margin-left: -50px;
+
+                            .animated-widget-container {
+                                .animated_face_main#SmillingFaceAnimation {
+                                    width: 160px;
+                                    height: 140px;
+                                }
                             }
                         }
                     }
