@@ -584,14 +584,27 @@
             position: fixed;
             width: 100%;
             min-height: 100vh;
-            overflow: auto;
+            max-height: 100vh;
             background: #1E2124;
             inset: 0;
             transform: translateY(-110vh);
             transition: all .5s ease;
             display: none;
             z-index: 9;
-            padding: 80px 0 70px;
+            padding: 90px 0 0px;
+
+            &::before {
+                content: '';
+                right: 0;
+                left: 0;
+                height: 10px;
+                bottom: 0;
+                position: absolute;
+                height: 6px;
+                background: linear-gradient(90deg, #08D698 0.05%, #3050E5 37.85%, #B66CFF 68.42%, #FC8DBB 99.96%);
+                background-size: 200% 100%;
+                animation: loadingBarBgGradientAnimation 8s ease infinite;
+            }
 
             &::-webkit-scrollbar {
                 width: 0;
@@ -620,8 +633,13 @@
                 max-width: var(--container-width);
                 width: var(--full-width);
                 margin: 0 auto;
-                min-height: 100%;
-                padding: 50px 0 10px;
+                overflow: auto;
+                /* padding: 80px 0 70px; */
+                max-height: calc(100vh - 120px);
+
+                &::-webkit-scrollbar {
+                    width: 0;
+                }
 
                 .custom-bigmenu-content-main {
                     position: relative;
@@ -881,10 +899,6 @@
                     }
 
                     .bigmenu-social-links {
-                        position: absolute;
-                        bottom: -50px;
-                        right: 0;
-
                         ul {
                             display: flex;
                             justify-content: right;

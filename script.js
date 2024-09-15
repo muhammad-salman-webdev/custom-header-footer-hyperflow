@@ -74,7 +74,7 @@ const swiper = new Swiper("#bigMenuSliderContainer .swiper", {
   //   delay: 2000,
   //   disableOnInteraction: false,
   // },
-  speed: 600,
+  speed: 400,
   spaceBetween: 20,
   navigation: {
     prevEl:
