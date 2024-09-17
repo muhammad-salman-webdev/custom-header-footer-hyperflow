@@ -91,6 +91,7 @@
     width: 100%;
     position: sticky;
     top: 0;
+    z-index: 99;
 
     .custom-loading-bar {
         position: absolute;
@@ -131,6 +132,7 @@
                     display: flex;
                     align-items: center;
                     gap: 16px;
+                    text-decoration: none;
 
                     .logo-img {
                         display: flex;
@@ -208,6 +210,8 @@
                                 }
 
                                 &.sub-menu-item {
+                                    cursor: pointer;
+
                                     &>div>a {
                                         display: flex;
                                         align-items: center;
@@ -1407,4 +1411,57 @@
             }
         }
     }
+}
+
+.footer-anim-logos-slider#footerAnimLogos {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+
+    .footer-anim-logos-container {
+        position: relative;
+        height: 120px;
+        overflow: hidden;
+
+        .anim-logos-row {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            bottom: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-between;
+
+            .anim-logo {
+                /* background: green; */
+                transition: opacity .3s ease, transform 1.5s ease;
+                transform: translateY(100px);
+                opacity: 0;
+                height: 120px;
+                aspect-ratio: 1/1;
+                display: grid;
+                place-items: center;
+
+                &.show {
+                    opacity: 1;
+                    transform: translateY(00px);
+                }
+
+                &.hide {
+                    opacity: 0;
+                    transform: translateY(-100px);
+                }
+
+                img {
+                    width: 80px;
+                    object-fit: center;
+                }
+            }
+        }
+    }
+}
+
+body {
+    background: grey;
 }
