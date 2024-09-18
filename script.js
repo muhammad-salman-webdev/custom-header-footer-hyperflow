@@ -46,8 +46,10 @@ const bigMenuToggleBtn = document.querySelector(
 const headerBigMenu = document.querySelector(
   "section.custom_header_section#customGlobalHeader .custom-header-main .custom-bigmenu-main#customHeaderBigMenu"
 );
-
-bigMenuToggleBtn.addEventListener("click", () => {
+const headerBigMenuOverlay = document.querySelector(
+  "section.custom_header_section#customGlobalHeader .bigmenu-overlay"
+);
+function toggleHeaderBigMenu() {
   if (bigMenuToggleBtn.classList.contains("active")) {
     headerBigMenu.classList.remove("anim");
     setTimeout(() => {
@@ -64,7 +66,10 @@ bigMenuToggleBtn.addEventListener("click", () => {
     }, 10);
     toggleServiceBigMenu("close");
   }
-});
+}
+
+bigMenuToggleBtn.addEventListener("click", toggleHeaderBigMenu);
+headerBigMenuOverlay.addEventListener("click", toggleHeaderBigMenu);
 
 // ###############################
 let curSlide = 1;
