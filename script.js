@@ -78,6 +78,10 @@ const swiper = new Swiper("#bigMenuSliderContainer .swiper", {
 
   speed: 600,
   spaceBetween: 20,
+  autoplay: {
+    delay: 3000, // Set your desired autoplay delay
+    disableOnInteraction: true, // Prevent disabling autoplay on user interactions
+  },
   navigation: {
     prevEl:
       ".bigmenu-slider-container#bigMenuSliderContainer .slider-btns button:has(.fa-arrow-left)",
